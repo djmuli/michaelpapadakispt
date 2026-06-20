@@ -11,39 +11,39 @@ import img5 from "../../imports/IMG_0791.jpeg";
 const testimonials = [
   {
     name: "Wayne Brown",
-    content: "Michael's knowledge is second to none. After just a few months I'm stronger than I've ever been and my technique has completely transformed. He knows exactly how to push you without overdoing it.",
+    content: "What a great guy. So personable with vast knowledge and experience. He has helped my journey so much. I cannot recommend him highly enough. Thanks Michael!",
   },
   {
     name: "Betty Zeritis",
-    content: "I was nervous starting the gym at my age but Michael made me feel completely at ease. I've lost weight, gained confidence and actually enjoy coming to the gym now. Couldn't recommend him more.",
+    content: "Best PT ever! Really focused on me as an individual and pushed me beyond what I thought I was capable of. A super nice, positive guy too. Highly recommend.",
   },
   {
     name: "Bethany Millet",
-    content: "Training with Michael has been life-changing. He's patient, incredibly knowledgeable and my body has changed more in 3 months than in years training on my own.",
+    content: "Michael is a great trainer and has taken my goals seriously from day one. The thing that strikes me about Michael is how knowledgeable he is - he'll explain what we're doing and why, and he's often giving me alternatives to work a muscle group in case different machines are taken.\n\nHe pulls together comprehensive workouts that are the perfect balance of familiar and new, so I am always learning. Michael has a holistic approach - while we are focusing on a primary muscle group, he's reminding me to think about everything else that is working, to keep my posture solid, and keep that mind-body connection.\n\nHe does push me but also reminds me not to rush. On top of all that, Michael is caring and personable and clearly respected in the gym. It's an absolute pleasure to train with him.",
   },
   {
     name: "Dan M",
-    content: "Best investment I've made in my health. Michael genuinely cares about your results and adjusts your program as you improve. You can just feel you're in safe, capable hands.",
+    content: "Not only does Michael have decades of experience, but he is also the nicest guy going around, listens and takes on board your goals. An absolute amazing PT!! Couldn't have chosen a better one.",
   },
   {
     name: "Alkira Rose",
-    content: "Michael is the most motivating trainer I've worked with. Supportive, professional and knows how to get results. My fitness, strength and confidence have improved so much.",
+    content: "I've been training with Michael Papadakis since last year, and I am genuinely amazed by the results I've achieved so far. I've been training for years, but since working with Michael I've learnt more than I ever expected.\n\nHis knowledge, attention to detail, and ability to explain the 'why' behind everything has completely changed the way I approach my training.\n\nI originally started training with Michael because of his extensive bodybuilding knowledge, as I'm preparing for my very first competition this September. From day one, I've had complete confidence in his coaching, and that confidence has only grown as I've seen the progress we've made together.\n\nMichael is incredibly passionate about what he does and truly cares about helping his clients achieve their goals. He knows exactly when to push you, how to adjust your training when needed, and how to bring out your best.\n\nI have full faith that my physique will be on point for comp day because of his guidance and expertise.\n\nIf you're looking for a trainer who is knowledgeable, professional, supportive, and genuinely invested in your success, I couldn't recommend Michael highly enough. Thank you for helping me become the strongest, most confident version of myself!",
   },
   {
     name: "Beauty By Vicky",
-    content: "I came to Michael not knowing where to start and he made everything so approachable. The personalised program and ongoing support made all the difference. Highly recommend.",
+    content: "I've been training with Michael and I highly recommend him. He is knowledgeable, professional, and genuinely cares. He takes the time to explain things clearly, is patient and encouraging, and always makes me feel comfortable. He's such a nice guy.\n\nIf you're looking for a personal trainer who is friendly, supportive, and truly invested in your progress, I highly recommend Michael.",
   },
   {
     name: "John-Martin Pryde",
-    content: "Michael's experience shows in every session. His coaching is structured, effective and he genuinely invests in your progress. Best trainer I've worked with by a long way.",
+    content: "I've really enjoyed training with Michael. He's super knowledgeable and takes the time to understand what you're trying to achieve rather than using a one-size-fits-all approach.\n\nHe's happy to work with your goals, adjust things when needed, and explain the reasoning behind the training so you know why you're doing what you're doing.\n\nHe's approachable, easy to get along with, and creates a great training environment.\n\nI'd definitely recommend Michael to anyone looking for a PT who's invested in helping you make progress and reach your goals.",
   },
   {
     name: "Jennifer Kulow",
-    content: "I've trained with a few coaches over the years but Michael stands out. He listens, adapts and really pushes you toward your goals in a way that feels achievable and sustainable.",
+    content: "Michael is one of the best! Such a hype man! He really takes the time to understand your goals. He works through all the exercises to ensure your form is correct. Highly recommend.",
   },
   {
     name: "Audrey Doncas",
-    content: "No one compares to Michael. He truly personalises every session, teaches you the right way to move and supports you every step of the way. The results speak for themselves.",
+    content: "I've been training with Michael almost 3 months now. I have noticed such a change in my physique and also my consistency with attending the gym.\n\nMichael helped me become more confident in the gym by giving me structured workouts, knowledge and motivation.",
   },
 ];
 
@@ -111,7 +111,7 @@ export function TestimonialsSection() {
         </motion.div>
 
         {/* 3×3 grid — desktop */}
-        <div className="hidden md:grid md:grid-cols-3 gap-4">
+        <div className="hidden md:columns-2 lg:columns-3 gap-4">
           {testimonials.map((t, index) => (
             <motion.div
               key={index}
@@ -119,10 +119,10 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.06, duration: 0.6 }}
-              className="bg-black border border-white/10 p-6 hover:border-red-600/30 transition-colors flex flex-col"
+              className="bg-black border border-white/10 p-6 mb-4 hover:border-red-600/30 transition-colors flex flex-col break-inside-avoid"
             >
               <Stars />
-              <p className="text-white/70 mb-5 leading-relaxed text-sm flex-1">"{t.content}"</p>
+              <p className="text-white/70 mb-5 leading-relaxed text-sm flex-1 whitespace-pre-line">"{t.content}"</p>
               <div className="flex items-center justify-between pt-4 border-t border-white/10">
                 <p className="text-white font-semibold text-sm tracking-wide">{t.name}</p>
                 <span className="text-white/25 text-xs uppercase tracking-wider">Google</span>
@@ -141,7 +141,7 @@ export function TestimonialsSection() {
             className="bg-black border border-white/10 p-6 mb-5"
           >
             <Stars />
-            <p className="text-white/70 mb-5 leading-relaxed">
+            <p className="text-white/70 mb-5 leading-relaxed whitespace-pre-line">
               "{testimonials[activeIndex].content}"
             </p>
             <div className="flex items-center justify-between pt-4 border-t border-white/10">
