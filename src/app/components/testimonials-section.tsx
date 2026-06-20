@@ -157,7 +157,7 @@ export function TestimonialsSection() {
         </motion.div>
 
         {/* 3×3 grid — desktop */}
-        <div className="hidden md:columns-2 lg:columns-3 gap-4">
+        <div className="hidden md:block md:columns-2 lg:columns-3 gap-4">
           {testimonials.map((t, index) => (
             <motion.div
               key={index}
