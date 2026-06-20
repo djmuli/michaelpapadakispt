@@ -48,6 +48,7 @@ const testimonials = [
 ];
 
 const clientPhotos = [img1, img2, img3, img4, img5];
+const REVIEW_PREVIEW_LENGTH = 250;
 
 function Stars() {
   return (
@@ -59,8 +60,53 @@ function Stars() {
   );
 }
 
+function ReviewText({
+  content,
+  isExpanded,
+  onToggle,
+  className = "",
+}: {
+  content: string;
+  isExpanded: boolean;
+  onToggle: () => void;
+  className?: string;
+}) {
+  const needsExpansion = content.length > REVIEW_PREVIEW_LENGTH;
+  const visibleContent =
+    needsExpansion && !isExpanded
+      ? content.slice(0, REVIEW_PREVIEW_LENGTH)
+      : content;
+
+  return (
+    <div className={className}>
+      <p className="text-white/70 leading-relaxed whitespace-pre-line">
+        "{visibleContent}
+        {needsExpansion && !isExpanded ? <span aria-hidden="true">...</span> : null}"
+      </p>
+      {needsExpansion ? (
+        <button
+          type="button"
+          onClick={onToggle}
+          className="mt-3 text-xs uppercase tracking-wider text-red-400 hover:text-red-300 transition-colors"
+          aria-expanded={isExpanded}
+        >
+          {isExpanded ? "Read Less" : "Read More"}
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
 export function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [expandedReviews, setExpandedReviews] = useState<Record<number, boolean>>({});
+
+  const toggleReview = (index: number) => {
+    setExpandedReviews((current) => ({
+      ...current,
+      [index]: !current[index],
+    }));
+  };
 
   return (
     <section className="bg-zinc-950 text-white py-20 sm:py-32">
@@ -122,7 +168,12 @@ export function TestimonialsSection() {
               className="bg-black border border-white/10 p-6 mb-4 hover:border-red-600/30 transition-colors flex flex-col break-inside-avoid"
             >
               <Stars />
-              <p className="text-white/70 mb-5 leading-relaxed text-sm flex-1 whitespace-pre-line">"{t.content}"</p>
+              <ReviewText
+                content={t.content}
+                isExpanded={!!expandedReviews[index]}
+                onToggle={() => toggleReview(index)}
+                className="mb-5 text-sm flex-1"
+              />
               <div className="flex items-center justify-between pt-4 border-t border-white/10">
                 <p className="text-white font-semibold text-sm tracking-wide">{t.name}</p>
                 <span className="text-white/25 text-xs uppercase tracking-wider">Google</span>
@@ -141,9 +192,12 @@ export function TestimonialsSection() {
             className="bg-black border border-white/10 p-6 mb-5"
           >
             <Stars />
-            <p className="text-white/70 mb-5 leading-relaxed whitespace-pre-line">
-              "{testimonials[activeIndex].content}"
-            </p>
+            <ReviewText
+              content={testimonials[activeIndex].content}
+              isExpanded={!!expandedReviews[activeIndex]}
+              onToggle={() => toggleReview(activeIndex)}
+              className="mb-5"
+            />
             <div className="flex items-center justify-between pt-4 border-t border-white/10">
               <p className="text-white font-semibold text-sm">{testimonials[activeIndex].name}</p>
               <span className="text-white/25 text-xs uppercase tracking-wider">Google</span>
