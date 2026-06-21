@@ -14,7 +14,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full max-w-full overflow-hidden">
       {/* Darkened background — image visible but messaging takes priority */}
       <div className="absolute inset-0">
         <ImageWithFallback
@@ -31,13 +31,13 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-2xl"
+          className="max-w-2xl min-w-0"
         >
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl text-white mb-6 tracking-tight leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl text-white mb-6 tracking-tight leading-tight break-words"
           >
             PERSONAL TRAINING
             <br />
@@ -50,7 +50,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-base sm:text-lg text-white/65 mb-2 max-w-xl leading-relaxed"
+            className="text-base sm:text-lg text-white/65 mb-2 max-w-xl leading-relaxed break-words"
           >
             Personal training on-site at World Gym Marrickville, helping people across Marrickville and Sydney's Inner West lose weight, build strength, improve fitness and gain confidence.
           </motion.p>
@@ -68,12 +68,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.75, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 mb-10"
+            className="flex max-w-full flex-col sm:flex-row gap-4 mb-10"
           >
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-red-600 text-white hover:bg-red-700 text-base sm:text-lg px-10 py-7 h-auto uppercase tracking-wider shadow-lg shadow-red-900/40"
+              className="w-full max-w-full whitespace-normal bg-red-600 text-white hover:bg-red-700 text-base sm:text-lg px-8 sm:px-10 py-7 h-auto uppercase tracking-wider shadow-lg shadow-red-900/40 sm:w-auto"
             >
               Book Your Free Consultation
             </Button>
@@ -81,9 +81,9 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               asChild
-              className="border-white/50 text-white bg-transparent hover:bg-white/10 text-base px-8 py-7 h-auto uppercase tracking-wider"
+              className="w-full max-w-full whitespace-normal border-white/50 text-white bg-transparent hover:bg-white/10 text-base px-8 py-7 h-auto uppercase tracking-wider sm:w-auto"
             >
-              <a href="tel:0400169800" className="flex items-center gap-2">
+              <a href="tel:0400169800" className="flex max-w-full items-center gap-2">
                 <Phone className="w-4 h-4" />
                 Call Michael
               </a>

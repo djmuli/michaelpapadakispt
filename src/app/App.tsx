@@ -15,7 +15,7 @@ import { Footer } from "./components/footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen w-full max-w-full overflow-x-clip bg-black">
       <Navigation />
       <HeroSection />
       <TrustBar />

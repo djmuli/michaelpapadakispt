@@ -170,12 +170,12 @@ export function ContactSection() {
             {/* Social links */}
             <div>
               <p className="text-white/40 uppercase tracking-[0.2em] text-xs mb-3">Follow & Connect</p>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <a
                   href="https://www.instagram.com/michael.papadakis.pt/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-zinc-950 border border-white/10 px-4 py-3 hover:border-red-600/50 transition-colors flex-1"
+                  className="flex min-w-0 flex-1 items-center gap-2 bg-zinc-950 border border-white/10 px-4 py-3 hover:border-red-600/50 transition-colors"
                 >
                   <Instagram className="w-4 h-4 text-red-500" />
                   <span className="text-white/70 text-sm">Instagram</span>
@@ -184,7 +184,7 @@ export function ContactSection() {
                   href="https://www.facebook.com/profile.php?id=61588516710099"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-zinc-950 border border-white/10 px-4 py-3 hover:border-red-600/50 transition-colors flex-1"
+                  className="flex min-w-0 flex-1 items-center gap-2 bg-zinc-950 border border-white/10 px-4 py-3 hover:border-red-600/50 transition-colors"
                 >
                   <Facebook className="w-4 h-4 text-red-500" />
                   <span className="text-white/70 text-sm">Facebook</span>
@@ -193,7 +193,7 @@ export function ContactSection() {
                   href="https://share.google/ki7opxprUE9uBqXuY"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-zinc-950 border border-white/10 px-4 py-3 hover:border-red-600/50 transition-colors flex-1"
+                  className="flex min-w-0 flex-1 items-center gap-2 bg-zinc-950 border border-white/10 px-4 py-3 hover:border-red-600/50 transition-colors"
                 >
                   <Star className="w-4 h-4 text-red-500" />
                   <span className="text-white/70 text-sm">Reviews</span>

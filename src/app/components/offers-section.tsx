@@ -88,7 +88,7 @@ export function OffersSection() {
               transition={{ delay: index * 0.12, duration: 0.7 }}
               className={`relative flex flex-col border p-8 ${
                 m.featured
-                  ? "border-red-600 bg-black shadow-lg shadow-red-900/20 scale-[1.02]"
+                  ? "border-red-600 bg-black shadow-lg shadow-red-900/20 md:scale-[1.02]"
                   : "border-white/10 bg-black"
               }`}
             >

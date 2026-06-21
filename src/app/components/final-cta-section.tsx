@@ -29,9 +29,9 @@ export function FinalCtaSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-2xl"
+          className="max-w-2xl min-w-0"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl text-white mb-5 tracking-tight leading-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl text-white mb-5 tracking-tight leading-tight break-words">
             READY TO BECOME
             <span className="text-red-500"> STRONGER,</span>
             <br />
@@ -42,11 +42,11 @@ export function FinalCtaSection() {
           <p className="text-white/55 text-lg mb-10">
             Limited introductory offers available now for new clients.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex max-w-full flex-col sm:flex-row gap-4">
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-red-600 text-white hover:bg-red-700 text-base px-10 py-6 h-auto uppercase tracking-wider"
+              className="w-full max-w-full whitespace-normal bg-red-600 text-white hover:bg-red-700 text-base px-8 sm:px-10 py-6 h-auto uppercase tracking-wider sm:w-auto"
             >
               Book Your First Session
             </Button>
@@ -54,9 +54,9 @@ export function FinalCtaSection() {
               size="lg"
               variant="outline"
               asChild
-              className="border-white/30 text-white bg-transparent hover:bg-white/10 text-base px-8 py-6 h-auto uppercase tracking-wider"
+              className="w-full max-w-full whitespace-normal border-white/30 text-white bg-transparent hover:bg-white/10 text-base px-8 py-6 h-auto uppercase tracking-wider sm:w-auto"
             >
-              <a href="tel:0400169800" className="flex items-center gap-2">
+              <a href="tel:0400169800" className="flex max-w-full items-center gap-2">
                 <Phone className="w-4 h-4" />
                 0400 169 800
               </a>

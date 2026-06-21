@@ -65,7 +65,7 @@ export function ServicesSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
-            <div className="absolute -bottom-4 -right-4 bg-red-600 p-5">
+            <div className="absolute -bottom-4 right-0 bg-red-600 p-5 sm:-right-4">
               <p className="text-white uppercase tracking-wider text-sm">World Gym</p>
               <p className="text-white/80 text-xs">Marrickville</p>
             </div>
@@ -115,7 +115,7 @@ export function ServicesSection() {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-red-600 text-white hover:bg-red-700 uppercase tracking-wider px-10 py-6 h-auto"
+              className="w-full max-w-full whitespace-normal bg-red-600 text-white hover:bg-red-700 uppercase tracking-wider px-8 sm:px-10 py-6 h-auto sm:w-auto"
             >
               Book Your Free Consultation
             </Button>
